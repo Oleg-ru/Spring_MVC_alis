@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/first")
 public class FirstController {
 
+
     @GetMapping("/hello")
     public String helloPage() {
         return "first/hello";
