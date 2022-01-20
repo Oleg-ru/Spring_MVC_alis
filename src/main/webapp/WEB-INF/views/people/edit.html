@@ -6,8 +6,20 @@
 </head>
 <body>
     <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
-        <label for="name_1">Enter name:</label>
-        <input type="text" th:field="*{name}" id="name_1"/>
+
+        <label for="name_1">New Name:</label>
+        <input type="text" th:field="*{name}" id="name_1">
+        <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+        <br/>
+
+        <label for="age_1">New age:</label>
+        <input type="text" th:field="*{age}" id="age_1">
+        <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
+        <br/>
+
+        <label for="email_1">New email:</label>
+        <input type="text" th:field="*{email}" id="email_1">
+        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
         <br/>
         <input type="submit" value="Update!"/>
 
